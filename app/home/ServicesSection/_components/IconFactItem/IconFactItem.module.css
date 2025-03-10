@@ -1,0 +1,29 @@
+.container {
+  flex: 1;
+  gap: var(--mantine-spacing-sm);
+}
+
+.copy {
+  flex: 1;
+}
+
+.icon {
+  --fa-secondary-opacity: 1;
+  --fa-primary-color: var(--mantine-color-pc-denim-4);
+  --fa-secondary-color: var(--mantine-color-pc-orange-2);
+  font-size: rem(32);
+}
+
+.icon-box {
+  align-items: center;
+  background-color: var(--mantine-color-pc-denim-1);
+  border-radius: var(--mantine-radius-md);
+  height: rem(60);
+  justify-content: center;
+  width: rem(60);
+}
+
+.text {
+  color: var(--mantine-color-dimmed);
+  font-size: var(--mantine-font-size-sm);
+}

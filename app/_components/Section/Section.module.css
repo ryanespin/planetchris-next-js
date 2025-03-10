@@ -1,0 +1,44 @@
+.section {
+  padding-bottom: var(--mantine-spacing-xl);
+  padding-top: var(--mantine-spacing-xl);
+  position: relative;
+  z-index: 1;
+
+  &-denim {
+    background-color: var(--mantine-color-pc-denim-4);
+    color: var(--mantine-color-white);
+  }
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--mantine-spacing-xl);
+}
+
+.title {
+  text-align: center;
+}
+
+.divider {
+  width: 3rem;
+}
+
+.anchor {
+  display: block;
+  position: relative;
+  top: -116px;
+  visibility: hidden;
+}
+
+.image {
+  position: absolute;
+  object-fit: cover;
+  object-position: right;
+}
+
+.bg-container {
+  position: relative;
+  overflow: hidden;
+}

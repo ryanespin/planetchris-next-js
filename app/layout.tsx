@@ -1,8 +1,26 @@
 import '@mantine/core/styles.css';
+import '@mantine/carousel/styles.css';
+import '@fontsource/dm-sans';
+import './_theme/styles.css';
 
 import React from 'react';
-import { ColorSchemeScript, mantineHtmlProps, MantineProvider } from '@mantine/core';
-import { theme } from '../theme';
+import { config } from '@fortawesome/fontawesome-svg-core';
+import {
+  AppShell,
+  AppShellHeader,
+  AppShellMain,
+  ColorSchemeScript,
+  mantineHtmlProps,
+  MantineProvider,
+} from '@mantine/core';
+import Header from './_components/Header';
+import { theme } from './_theme';
+
+import '@fortawesome/fontawesome-svg-core/styles.css';
+
+import Footer from './_components/Footer';
+
+config.autoAddCss = false;
 
 export const metadata = {
   title: 'Mantine Next.js template',
@@ -21,7 +39,17 @@ export default function RootLayout({ children }: { children: any }) {
         />
       </head>
       <body>
-        <MantineProvider theme={theme}>{children}</MantineProvider>
+        <MantineProvider theme={theme}>
+          <AppShell header={{ height: 116 }}>
+            <AppShellHeader>
+              <Header />
+            </AppShellHeader>
+            <AppShellMain>
+              {children}
+              <Footer />
+            </AppShellMain>
+          </AppShell>
+        </MantineProvider>
       </body>
     </html>
   );

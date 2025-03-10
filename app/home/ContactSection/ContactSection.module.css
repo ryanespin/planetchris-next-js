@@ -1,0 +1,14 @@
+.button {
+  align-self: flex-start;
+}
+
+.card {
+  gap: var(--mantine-spacing-xl);
+  max-width: rem(640);
+  width: 100%;
+
+  @media (max-width: $mantine-breakpoint-sm) {
+    padding: var(--mantine-spacing-md);
+    gap: var(--mantine-spacing-md);
+  }
+}

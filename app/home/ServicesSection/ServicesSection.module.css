@@ -1,0 +1,14 @@
+.alert {
+  align-items: center;
+}
+
+.alert-body {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--mantine-spacing-sm);
+}
+
+.alert-title {
+  text-align: center;
+}

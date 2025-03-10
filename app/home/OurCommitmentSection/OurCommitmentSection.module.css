@@ -1,0 +1,33 @@
+.card {
+  flex-direction: row;
+  gap: calc(var(--mantine-spacing-xl) * 2);
+  padding: var(--mantine-spacing-xl) calc(var(--mantine-spacing-xl) * 2);
+
+  @media (max-width: $mantine-breakpoint-sm) {
+    gap: var(--mantine-spacing-md);
+    padding: var(--mantine-spacing-md);
+  }
+}
+
+.copy {
+  flex-direction: column;
+  flex: 1.618;
+  gap: var(--mantine-spacing-md);
+}
+
+.logo {
+  width: 100%;
+  position: absolute;
+  right: 0;
+}
+
+.logo-box {
+  color: var(--mantine-color-pc-denim-4);
+  flex: 1;
+  position: relative;
+}
+
+.signature {
+  width: rem(189);
+  height: rem(84);
+}

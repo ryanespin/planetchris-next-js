@@ -1,0 +1,30 @@
+.card {
+  flex-direction: row;
+  gap: calc(var(--mantine-spacing-xl) * 2);
+  padding: var(--mantine-spacing-xl) calc(var(--mantine-spacing-xl) * 2);
+
+  @media (max-width: $mantine-breakpoint-sm) {
+    flex-direction: column-reverse;
+    gap: var(--mantine-spacing-md);
+    padding: var(--mantine-spacing-md);
+  }
+}
+
+.copy {
+  flex-direction: column;
+  flex: 1.618;
+  gap: var(--mantine-spacing-md);
+}
+
+.image-box {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.image {
+  height: 100%;
+  width: 100%;
+}

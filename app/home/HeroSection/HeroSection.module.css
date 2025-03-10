@@ -1,0 +1,68 @@
+.anchor {
+  display: block;
+  position: relative;
+  top: -116px;
+  visibility: hidden;
+}
+
+.button {
+  align-self: flex-start;
+  background-color: var(--mantine-color-pc-orange-2);
+  border-radius: var(--mantine-radius-xl);
+  color: var(--mantine-color-black);
+}
+
+.container {
+  display: flex;
+  gap: rem(64);
+
+  @media (max-width: $mantine-breakpoint-sm) {
+    flex-direction: column;
+  }
+}
+
+.copy {
+  flex-direction: column;
+  gap: var(--mantine-spacing-md);
+}
+
+.image-container {
+  position: relative;
+  max-height: 523px;
+
+  @media (max-width: $mantine-breakpoint-sm) {
+    aspect-ratio: .9;
+  }
+}
+
+.image {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 101%;
+  object-fit: contain;
+  object-position: bottom right;
+}
+
+.left-section {
+  flex-direction: column;
+  flex: 1.618;
+  gap: var(--mantine-spacing-lg);
+}
+
+.outer-container {
+  background-color: var(--mantine-color-pc-denim-0);
+  padding: rem(40) 0;
+
+  @media (min-width: $mantine-breakpoint-sm) {
+    padding: rem(160) 0;
+  }
+}
+
+.title {
+  font-size: rem(28);
+
+  @media (min-width: $mantine-breakpoint-sm) {
+    font-size: rem(40);
+  }
+}
