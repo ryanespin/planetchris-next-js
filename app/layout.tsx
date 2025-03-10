@@ -23,8 +23,8 @@ import Footer from './_components/Footer';
 config.autoAddCss = false;
 
 export const metadata = {
-  title: 'Mantine Next.js template',
-  description: 'I am using Mantine with Next.js!',
+  title: 'PlanetChris Consulting',
+  description: 'PlanetChris Consulting helps youth-serving organizations build stronger, more inclusive cultures. Through interactive training and hands-on coaching, teams gain the tools they need to lead with confidence, create welcoming spaces, and make a lasting impact.',
 };
 
 export default function RootLayout({ children }: { children: any }) {
