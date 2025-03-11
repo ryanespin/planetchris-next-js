@@ -19,13 +19,41 @@ import { theme } from './_theme';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 
 import Footer from './_components/Footer';
+import { Metadata, Viewport } from 'next';
 
 config.autoAddCss = false;
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'PlanetChris Consulting',
   description: 'PlanetChris Consulting helps youth-serving organizations build stronger, more inclusive cultures. Through interactive training and hands-on coaching, teams gain the tools they need to lead with confidence, create welcoming spaces, and make a lasting impact.',
+  metadataBase: new URL('https://planetchris.net'),
+  openGraph: {
+    images: '/og-image.png'
+  },
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+    googleBot: {
+      index: true,
+      follow: true,
+      noimageindex: false,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'PlanetChris Consulting',
+    description: 'PlanetChris Consulting helps youth-serving organizations build stronger, more inclusive cultures. Through interactive training and hands-on coaching, teams gain the tools they need to lead with confidence, create welcoming spaces, and make a lasting impact.',
+    images: ['https:/planetchris.net/og-image.png'], // Must be an absolute URL
+  },
 };
+
+export const viewport: Viewport = {
+  themeColor: theme.primaryColor,
+}
 
 export default function RootLayout({ children }: { children: any }) {
   return (
