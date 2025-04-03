@@ -6,6 +6,7 @@ import { faSmile } from '@fortawesome/duotone-light-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Alert, Button, Card, Textarea, TextInput } from '@mantine/core';
 import { isNotEmpty, useForm } from '@mantine/form';
+import { notifications } from '@mantine/notifications';
 import Section from '@/app/_components/Section';
 import classes from './ContactSection.module.css';
 
@@ -27,15 +28,19 @@ function ContactSection() {
 
   const onSubmit = (values: { email: string; message: string; name: string }) => {
     emailjs
-      .send('service_yprfvat', 'template_ii9aqt2', values, {
-        publicKey: 'LnkOlo_UIHA_r6GKy',
+      .send('service_tf8sn9l', 'template_bragcbu', values, {
+        publicKey: 'ygrizlPbKT8aBlFdr',
       })
       .then(
         () => {
           setMessageSentSuccesfully(true);
         },
-        (error) => {
-          console.log('FAILED...', error);
+        (_error) => {
+          notifications.show({
+            title: 'Sorry, an error has occurred.',
+            message: `Please try again.`,
+            color: 'red',
+          });
         }
       );
   };
