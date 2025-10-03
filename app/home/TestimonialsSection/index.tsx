@@ -44,13 +44,12 @@ function TestimonialsSection() {
         <Title order={2}>What people have to say</Title>
         <CardSection maw="100%">
           <Carousel
-            align="center"
             slideGap="xs"
             slideSize="90%"
-            loop
             height={450}
             withIndicators
             hiddenFrom="sm"
+            emblaOptions={{ align: 'center', loop: true }}
           >
             {testimonials.map((item, index) => (
               <CarouselSlide key={index}>
