@@ -72,11 +72,10 @@ function ContactSection() {
           <TextInput label="Name" key={form.key('name')} {...form.getInputProps('name')} />
           <TextInput label="Email" key={form.key('email')} {...form.getInputProps('email')} />
           <Textarea label="Message" key={form.key('message')} {...form.getInputProps('message')} />
-          <Flex align="flex-end" gap="md">
+          <Flex align={{ base: 'center', sm: 'flex-end' }} direction={{ base: 'column', sm: 'row' }} justify={{ base: 'center', sm: 'space-between' }} gap="md">
             <Button className={classes.button} size="xl" type="submit">
               Send Message
             </Button>
-            <Flex flex={1} />
             <Button
               component="a"
               variant="outline"
