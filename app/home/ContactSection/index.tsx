@@ -2,9 +2,9 @@
 
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
-import { faSmile } from '@fortawesome/duotone-light-svg-icons';
+import { faPaperPlane, faSmile } from '@fortawesome/duotone-light-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Alert, Button, Card, Textarea, TextInput } from '@mantine/core';
+import { Alert, Button, Card, Flex, Text, Textarea, TextInput } from '@mantine/core';
 import { isNotEmpty, useForm } from '@mantine/form';
 import { notifications } from '@mantine/notifications';
 import Section from '@/app/_components/Section';
@@ -36,6 +36,7 @@ function ContactSection() {
           setMessageSentSuccesfully(true);
         },
         (_error) => {
+          console.log(_error);
           notifications.show({
             title: 'Sorry, an error has occurred.',
             message: `Please try again.`,
@@ -71,9 +72,21 @@ function ContactSection() {
           <TextInput label="Name" key={form.key('name')} {...form.getInputProps('name')} />
           <TextInput label="Email" key={form.key('email')} {...form.getInputProps('email')} />
           <Textarea label="Message" key={form.key('message')} {...form.getInputProps('message')} />
-          <Button className={classes.button} size="xl" type="submit">
-            Send Message
-          </Button>
+          <Flex align="flex-end" gap="md">
+            <Button className={classes.button} size="xl" type="submit">
+              Send Message
+            </Button>
+            <Flex flex={1} />
+            <Button
+              component="a"
+              variant="outline"
+              href="mailto:planetchris@gmail.com?subject=[planetchris.net] I'd Like to Learn More About PlanetChris Consulting"
+              rightSection={<FontAwesomeIcon icon={faPaperPlane} />}
+              target="_blank"
+            >
+              Or Email Me Directly
+            </Button>
+          </Flex>
         </Card>
       )}
     </Section>
