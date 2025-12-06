@@ -5,15 +5,6 @@
   height: 100%;
 }
 
-.button-group {
-  flex: 1;
-  justify-content: flex-end;
-
-  @media (max-width: $mantine-breakpoint-sm) {
-    flex-direction: column;
-  }
-}
-
 .logo {
   align-items: center;
   color: var(--mantine-color-black) !important;

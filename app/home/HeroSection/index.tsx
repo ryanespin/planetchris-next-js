@@ -1,7 +1,8 @@
-import NextImage from 'next/image';
 import { Box, Button, Container, Flex, Highlight, Image, Text, Title } from '@mantine/core';
-import image from './pc-hero-image.png';
+import NextImage from 'next/image';
+
 import classes from './HeroSection.module.css';
+import image from './pc-hero-image.png';
 
 function HeroSection() {
   return (
@@ -37,7 +38,7 @@ function HeroSection() {
           </Button>
         </Flex>
         <Flex bg="var(--mantine-color-pc-denim-4)" className={classes['image-container']} flex={1}>
-          <Image className={classes.image} component={NextImage} src={image} alt="Chris Hudson" />
+          <Image alt="Chris Hudson" className={classes.image} component={NextImage} src={image} />
         </Flex>
       </Container>
     </Box>

@@ -3,13 +3,13 @@ interface LogoTypeProps extends React.ComponentPropsWithoutRef<'svg'> {
   width?: number | string;
 }
 
-export function LogoType({ width, height, style, ...others }: LogoTypeProps) {
+export function LogoType({ height, style, width, ...others }: LogoTypeProps) {
   return (
     <svg
-      viewBox="0 0 576 126"
       fill="none"
+      style={{ height, width, ...style }}
+      viewBox="0 0 576 126"
       xmlns="http://www.w3.org/2000/svg"
-      style={{ width, height, ...style }}
       {...others}
     >
       <path

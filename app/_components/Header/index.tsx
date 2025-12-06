@@ -1,33 +1,15 @@
 'use client';
 
-import { Anchor, Burger, Button, Container, Drawer, Flex, FlexProps } from '@mantine/core';
+import { Anchor, Burger, Button, Container, Drawer } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
+
 import { Logo } from '../Logo';
 import { LogoType } from '../LogoType';
+import HeaderButtonGroup from './components/HeaderButtonGroup';
 import classes from './Header.module.css';
 
 function Header() {
-  const [opened, { open, close }] = useDisclosure(false);
-
-  function HeaderButtonGroup(props: FlexProps) {
-    return (
-      <Flex className={classes['button-group']} {...props}>
-        <Button component="a" href="#ourCommitment" onClick={close} variant="subtle">
-          Our Commitment
-        </Button>
-        <Button component="a" href="#services" onClick={close} variant="subtle">
-          Services
-        </Button>
-        <Button component="a" href="#about" onClick={close} variant="subtle">
-          About
-        </Button>
-        <Button component="a" href="#testimonials" onClick={close} variant="subtle">
-          Testimonials
-        </Button>
-        {props.children}
-      </Flex>
-    );
-  }
+  const [opened, { close, open }] = useDisclosure(false);
 
   return (
     <Container className={classes.header} size="xl">
@@ -48,13 +30,14 @@ function Header() {
         <Logo className={classes['logo-image']} />
         <LogoType className={classes['logo-type']} />
       </Anchor>
-      <HeaderButtonGroup visibleFrom="sm" />
+      <HeaderButtonGroup close={close} visibleFrom="sm" />
       <Button component="a" href="#contact" onClick={close} visibleFrom="sm">
         Contact
       </Button>
       <Drawer
-        opened={opened}
         onClose={close}
+        opened={opened}
+        pos="relative"
         size="max-content"
         title={
           <Anchor className={classes.logo} href="#top">
@@ -63,9 +46,8 @@ function Header() {
           </Anchor>
         }
         withCloseButton={false}
-        pos="relative"
       >
-        <HeaderButtonGroup>
+        <HeaderButtonGroup close={close}>
           <Button component="a" href="#contact" onClick={close} variant="subtle">
             Contact
           </Button>

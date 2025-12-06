@@ -2,9 +2,9 @@ import '@mantine/core/styles.css';
 import '@mantine/carousel/styles.css';
 import '@mantine/notifications/styles.css';
 import '@fontsource/dm-sans';
+
 import './_theme/styles.css';
 
-import React from 'react';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import {
   AppShell,
@@ -14,23 +14,21 @@ import {
   mantineHtmlProps,
   MantineProvider,
 } from '@mantine/core';
+import { Notifications } from '@mantine/notifications';
+import { GoogleAnalytics } from '@next/third-parties/google';
+import { Metadata, Viewport } from 'next';
+import '@fortawesome/fontawesome-svg-core/styles.css';
+import React from 'react';
+
+import Footer from './_components/Footer';
 import Header from './_components/Header';
 import { theme } from './_theme';
-
-import '@fortawesome/fontawesome-svg-core/styles.css';
-
-import { Metadata, Viewport } from 'next';
-import { GoogleAnalytics } from '@next/third-parties/google';
-import { Notifications } from '@mantine/notifications';
-import Footer from './_components/Footer';
 
 config.autoAddCss = false;
 
 export const metadata: Metadata = {
-  title: 'PlanetChris Consulting',
   description:
     'PlanetChris Consulting helps youth-serving organizations build stronger, more inclusive cultures. Through interactive training and hands-on coaching, teams gain the tools they need to lead with confidence, create welcoming spaces, and make a lasting impact.',
-  metadataBase: new URL('https://planetchris.net'),
   keywords: [
     'youth development consultant',
     'camp staff training',
@@ -56,28 +54,30 @@ export const metadata: Metadata = {
     'staff training that sticks',
     'engaging DEI workshops for nonprofits',
   ],
+  metadataBase: new URL('https://planetchris.net'),
   openGraph: {
     images: '/og-image.png',
   },
   robots: {
-    index: true,
     follow: true,
-    nocache: false,
     googleBot: {
-      index: true,
       follow: true,
-      noimageindex: false,
-      'max-video-preview': -1,
+      index: true,
       'max-image-preview': 'large',
       'max-snippet': -1,
+      'max-video-preview': -1,
+      noimageindex: false,
     },
+    index: true,
+    nocache: false,
   },
+  title: 'PlanetChris Consulting',
   twitter: {
     card: 'summary_large_image',
-    title: 'PlanetChris Consulting',
     description:
       'PlanetChris Consulting helps youth-serving organizations build stronger, more inclusive cultures. Through interactive training and hands-on coaching, teams gain the tools they need to lead with confidence, create welcoming spaces, and make a lasting impact.',
     images: ['https:/planetchris.net/og-image.png'], // Must be an absolute URL
+    title: 'PlanetChris Consulting',
   },
 };
 
@@ -90,10 +90,10 @@ export default function RootLayout({ children }: { children: any }) {
     <html lang="en" {...mantineHtmlProps}>
       <head>
         <ColorSchemeScript />
-        <link rel="shortcut icon" href="/favicon.svg" />
+        <link href="/favicon.svg" rel="shortcut icon" />
         <meta
-          name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width, user-scalable=no"
+          name="viewport"
         />
       </head>
       <body>

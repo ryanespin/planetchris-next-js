@@ -1,9 +1,11 @@
-import NextImage from 'next/image';
 import { Box, Card, Flex, Image, Text } from '@mantine/core';
+import NextImage from 'next/image';
+
 import { Logo } from '@/app/_components/Logo';
 import Section from '@/app/_components/Section';
-import signature from './signature.png';
+
 import classes from './OurCommitmentSection.module.css';
+import signature from './signature.png';
 
 function OurCommitmentSection() {
   return (
@@ -16,7 +18,7 @@ function OurCommitmentSection() {
       <Card className={classes.card}>
         <Flex className={classes.copy}>
           <Text>
-            In today's world, where the value of diversity, equity, and inclusion (DEI) is sometimes
+            In today&apos;s world, where the value of diversity, equity, and inclusion (DEI) is sometimes
             questioned, the need for meaningful, lasting change has never been more significant.
             PlanetChris Consulting focuses on helping summer camps, afterschool programs, and
             youth-serving organizations build cultures where every individual feels seen, valued,
@@ -34,10 +36,10 @@ function OurCommitmentSection() {
             future together.
           </Text>
           <Image
+            alt="Chris Hudson signature"
             className={classes.signature}
             component={NextImage}
             src={signature}
-            alt="Chris Hudson signature"
           />
           <Text>Chris Hudson</Text>
         </Flex>

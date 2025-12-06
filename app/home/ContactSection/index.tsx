@@ -1,24 +1,26 @@
 'use client';
 
-import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { faPaperPlane, faSmile } from '@fortawesome/duotone-light-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Alert, Button, Card, Flex, Text, Textarea, TextInput } from '@mantine/core';
+import { Alert, Button, Card, Flex, Textarea, TextInput } from '@mantine/core';
 import { isNotEmpty, useForm } from '@mantine/form';
 import { notifications } from '@mantine/notifications';
+import { useState } from 'react';
+
 import Section from '@/app/_components/Section';
+
 import classes from './ContactSection.module.css';
 
 function ContactSection() {
   const [messageSentSuccessfully, setMessageSentSuccesfully] = useState(false);
   const form = useForm({
-    mode: 'uncontrolled',
     initialValues: {
       email: '',
       message: '',
       name: '',
     },
+    mode: 'uncontrolled',
     validate: {
       email: (value: string) => (/^\S+@\S+$/.test(value) ? null : 'Invalid email'),
       message: isNotEmpty('Message is required.'),
@@ -38,9 +40,9 @@ function ContactSection() {
         (_error) => {
           console.log(_error);
           notifications.show({
-            title: 'Sorry, an error has occurred.',
-            message: `Please try again.`,
             color: 'red',
+            message: `Please try again.`,
+            title: 'Sorry, an error has occurred.',
           });
         }
       );
@@ -69,19 +71,19 @@ function ContactSection() {
           noValidate
           onSubmit={form.onSubmit((values) => onSubmit(values))}
         >
-          <TextInput label="Name" key={form.key('name')} {...form.getInputProps('name')} />
-          <TextInput label="Email" key={form.key('email')} {...form.getInputProps('email')} />
-          <Textarea label="Message" key={form.key('message')} {...form.getInputProps('message')} />
-          <Flex align={{ base: 'center', sm: 'flex-end' }} direction={{ base: 'column', sm: 'row' }} justify={{ base: 'center', sm: 'space-between' }} gap="md">
+          <TextInput key={form.key('name')} label="Name" {...form.getInputProps('name')} />
+          <TextInput key={form.key('email')} label="Email" {...form.getInputProps('email')} />
+          <Textarea key={form.key('message')} label="Message" {...form.getInputProps('message')} />
+          <Flex align={{ base: 'center', sm: 'flex-end' }} direction={{ base: 'column', sm: 'row' }} gap="md" justify={{ base: 'center', sm: 'space-between' }}>
             <Button className={classes.button} size="xl" type="submit">
               Send Message
             </Button>
             <Button
               component="a"
-              variant="outline"
               href="mailto:planetchris@gmail.com?subject=[planetchris.net] I'd Like to Learn More About PlanetChris Consulting"
               rightSection={<FontAwesomeIcon icon={faPaperPlane} />}
               target="_blank"
+              variant="outline"
             >
               Or Email Me Directly
             </Button>

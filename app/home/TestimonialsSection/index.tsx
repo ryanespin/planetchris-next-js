@@ -2,7 +2,9 @@ import { faQuoteLeft } from '@fortawesome/duotone-light-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Carousel, CarouselSlide } from '@mantine/carousel';
 import { Badge, Box, Card, CardSection, Text, Title } from '@mantine/core';
+
 import Section from '@/app/_components/Section';
+
 import bg from './testimonials-bg.jpg';
 import classes from './TestimonialsSection.module.css';
 
@@ -18,7 +20,7 @@ const testimonials = [
 function TestimonialItem({ children }: { children?: React.ReactNode }) {
   return (
     <Box className={classes.testimonial}>
-      <FontAwesomeIcon color="var(--mantine-color-pc-denim-5)" icon={faQuoteLeft} fontSize={48} />
+      <FontAwesomeIcon color="var(--mantine-color-pc-denim-5)" fontSize={48} icon={faQuoteLeft} />
       <Text p="sm">{children}</Text>
     </Box>
   );
@@ -29,12 +31,12 @@ function TestimonialsSection() {
     <Section
       anchorId="testimonials"
       image={{
-        src: bg,
         alt: 'Chris Hudson doing an energetic group selfie.',
+        src: bg,
         style: {
           bottom: 0,
-          right: 0,
           height: '100%',
+          right: 0,
         },
       }}
       sectionVariant="image-background"
@@ -44,12 +46,12 @@ function TestimonialsSection() {
         <Title order={2}>What people have to say</Title>
         <CardSection maw="100%">
           <Carousel
+            emblaOptions={{ align: 'center', loop: true }}
+            height={450}
+            hiddenFrom="sm"
             slideGap="xs"
             slideSize="90%"
-            height={450}
             withIndicators
-            hiddenFrom="sm"
-            emblaOptions={{ align: 'center', loop: true }}
           >
             {testimonials.map((item, index) => (
               <CarouselSlide key={index}>

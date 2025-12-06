@@ -3,22 +3,22 @@ interface LogoProps extends React.ComponentPropsWithoutRef<'svg'> {
   width?: number | string;
 }
 
-export function Logo({ width, height, style, ...others }: LogoProps) {
+export function Logo({ height, style, width, ...others }: LogoProps) {
   return (
     <svg
-      viewBox="0 0 133 282"
       fill="none"
+      style={{ height, width, ...style }}
+      viewBox="0 0 133 282"
       xmlns="http://www.w3.org/2000/svg"
-      style={{ width, height, ...style }}
       {...others}
     >
       <g clipPath="url(#clip0_1_50)">
-        <circle cx="51" cy="107" r="17" fill="currentcolor" />
+        <circle cx="51" cy="107" fill="currentcolor" r="17" />
         <path
-          fillRule="evenodd"
           clipRule="evenodd"
           d="M114.5 36C112.667 66 97.2999 127.6 50.4999 134C35.1666 132.5 4.49995 117.9 4.49995 71.5C-0.833387 91.8333 4.39995 148.4 67.9999 212C68.4999 212.5 124 154.5 114.5 36ZM66.202 179.643L49.3739 170.166C46.5443 168.578 44.5067 165.881 43.7418 162.73L43.6349 162.29C42.3465 156.983 45.0818 151.528 50.1007 149.384C53.4226 147.967 57.2199 148.243 60.2957 150.117L61.4279 150.807L62.1178 149.675C63.9919 146.599 67.2399 144.612 70.8419 144.349C76.2847 143.952 81.2172 147.546 82.5057 152.853L82.6126 153.293C83.3775 156.444 82.8034 159.775 81.0171 162.484L70.408 178.622C69.9676 179.292 69.2879 179.77 68.5059 179.96C67.7239 180.15 66.9005 180.036 66.202 179.643Z"
           fill="currentcolor"
+          fillRule="evenodd"
         />
         <path
           d="M56.5 242.5C44.9 254.9 19.6667 273.333 8.50002 281C58.5 269.8 111 228 131 208.5C134.5 200.167 136.9 183.5 118.5 183.5C95.5 183.5 71 227 56.5 242.5Z"
@@ -39,7 +39,7 @@ export function Logo({ width, height, style, ...others }: LogoProps) {
       </g>
       <defs>
         <clipPath id="clip0_1_50">
-          <rect width="133" height="282" fill="white" />
+          <rect fill="white" height="282" width="133" />
         </clipPath>
       </defs>
     </svg>

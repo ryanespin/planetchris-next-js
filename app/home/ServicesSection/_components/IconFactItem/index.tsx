@@ -1,6 +1,7 @@
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Box, Flex, Text, TextProps, Title, TitleProps } from '@mantine/core';
+
 import classes from './IconFactItem.module.css';
 
 interface IconFactItemProps extends TextProps {

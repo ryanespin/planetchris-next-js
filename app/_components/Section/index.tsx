@@ -1,4 +1,3 @@
-import NextImage, { ImageProps as NextImageProps } from 'next/image';
 import {
   Badge,
   Box,
@@ -10,13 +9,15 @@ import {
   Title,
   TitleProps,
 } from '@mantine/core';
+import NextImage, { ImageProps as NextImageProps } from 'next/image';
+
 import classes from './Section.module.css';
 
 interface SectionProps extends BoxProps {
   anchorId?: string;
   badgeText?: string;
-  image?: NextImageProps & ImageProps;
   children?: React.ReactNode;
+  image?: ImageProps & NextImageProps;
   sectionTitle?: TitleProps['children'];
   sectionTitleProps?: TitleProps;
   sectionVariant?: 'default' | 'denim' | 'image-background';

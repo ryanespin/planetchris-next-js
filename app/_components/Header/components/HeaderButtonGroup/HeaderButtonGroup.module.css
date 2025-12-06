@@ -1,0 +1,8 @@
+.group {
+  flex: 1;
+  justify-content: flex-end;
+
+  @media (max-width: $mantine-breakpoint-sm) {
+    flex-direction: column;
+  }
+}

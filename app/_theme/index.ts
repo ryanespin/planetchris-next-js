@@ -1,4 +1,5 @@
 import { createTheme, MantineThemeOverride } from '@mantine/core';
+
 import { colors } from './colors';
 import { components } from './components';
 

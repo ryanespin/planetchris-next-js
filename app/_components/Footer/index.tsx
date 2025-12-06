@@ -1,4 +1,5 @@
 import { Anchor, Box, Button, Container, Divider, Flex, Text } from '@mantine/core';
+
 import { Logo } from '../Logo';
 import { LogoType } from '../LogoType';
 import classes from './Footer.module.css';
