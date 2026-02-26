@@ -6,13 +6,13 @@ import {
   faLightbulbMessage,
   faScaleUnbalanced,
   faTransgender,
-} from '@fortawesome/duotone-light-svg-icons';
-import { Alert, Button, Flex, SimpleGrid, Text, Title } from '@mantine/core';
+} from '@fortawesome/duotone-light-svg-icons'
+import { Alert, Button, Flex, SimpleGrid, Text, Title } from '@mantine/core'
 
-import Section from '@/app/_components/Section';
+import Section from '@/app/_components/Section'
 
-import IconFactItem from './_components/IconFactItem';
-import classes from './ServicesSection.module.css';
+import IconFactItem from './_components/IconFactItem'
+import classes from './ServicesSection.module.css'
 
 function ServicesSection() {
   return (
@@ -26,21 +26,26 @@ function ServicesSection() {
         <Text>
           Every training I offer is interactive, practical, and built for real-world impact. I
           don&apos;t just lecture—I create experiences where teams engage, reflect, and walk away
-          with tangible tools to improve their work. My approach is{' '}
+          with tangible tools to improve their work. My approach is
+          {' '}
           <Text component="strong" fw={700}>
             empathetic, honest, and genuine
           </Text>
           , allowing open conversations and meaningful change.
         </Text>
         <Text>
-          I provide{' '}
+          I provide
+          {' '}
           <Text component="strong" fw={700}>
             group training
-          </Text>{' '}
-          for staff and leadership teams and one-on-one{' '}
+          </Text>
+          {' '}
+          for staff and leadership teams and one-on-one
+          {' '}
           <Text component="strong" fw={700}>
             coaching
-          </Text>{' '}
+          </Text>
+          {' '}
           for managers and youth development professionals looking to strengthen their leadership
           skills. Every session can be customized to fit your organization&apos;s needs, but these
           are some of the most popular topics:
@@ -97,7 +102,11 @@ function ServicesSection() {
           title="Do you need something else?"
         >
           <Text fz="sm" ta="center">
-            I also create <strong>custom training</strong> based on your team&apos;s unique challenges
+            I also create
+            {' '}
+            <strong>custom training</strong>
+            {' '}
+            based on your team&apos;s unique challenges
             and goals. Let&apos;s discuss what your team needs!
           </Text>
           <Button radius="xl" variant="outline">
@@ -106,7 +115,7 @@ function ServicesSection() {
         </Alert>
       </SimpleGrid>
     </Section>
-  );
+  )
 }
 
-export default ServicesSection;
+export default ServicesSection

@@ -1,0 +1,18 @@
+:root {
+  --circle-icon-size: rem(36);
+}
+
+.icon {
+  --fa-secondary-opacity: 1;
+  --fa-primary-color: var(--mantine-color-pc-denim-4);
+  --fa-secondary-color: var(--mantine-color-pc-orange-2);
+  font-size: var(--circle-icon-size);
+}
+
+.icon-circle {
+  background-color: var(--mantine-color-pc-denim-1);
+  border: 2px solid var(--mantine-color-pc-denim-4);
+  border-radius: var(--circle-icon-size);
+  height: calc(var(--circle-icon-size) * 2);
+  width: calc(var(--circle-icon-size) * 2);
+}

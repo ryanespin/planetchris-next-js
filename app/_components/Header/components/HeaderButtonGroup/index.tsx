@@ -1,30 +1,31 @@
-import { Button, Flex, FlexProps } from "@mantine/core";
+import { Button, Flex, FlexProps } from '@mantine/core'
+import Link from 'next/link'
 
-import classes from './HeaderButtonGroup.module.css';
+import classes from './HeaderButtonGroup.module.css'
 
 interface HeaderButtonGroupProps extends FlexProps {
-  close: () => void;
+  close: () => void
 }
 
 function HeaderButtonGroup(props: HeaderButtonGroupProps) {
-  const { close, ...other } = props;
+  const { close, ...other } = props
   return (
     <Flex className={classes.group} {...other}>
-      <Button component="a" href="#ourCommitment" onClick={close} variant="subtle">
+      <Button component={Link} href="home#ourCommitment" onClick={close} variant="subtle">
         Our Commitment
       </Button>
-      <Button component="a" href="#services" onClick={close} variant="subtle">
+      <Button component={Link} href="home#services" onClick={close} variant="subtle">
         Services
       </Button>
-      <Button component="a" href="#about" onClick={close} variant="subtle">
+      <Button component={Link} href="home#about" onClick={close} variant="subtle">
         About
       </Button>
-      <Button component="a" href="#testimonials" onClick={close} variant="subtle">
+      <Button component={Link} href="home#testimonials" onClick={close} variant="subtle">
         Testimonials
       </Button>
       {props.children}
     </Flex>
-  );
+  )
 }
 
-export default HeaderButtonGroup;
+export default HeaderButtonGroup

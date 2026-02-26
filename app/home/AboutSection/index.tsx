@@ -1,10 +1,10 @@
-import { Box, Card, Flex, Image, Text } from '@mantine/core';
-import NextImage from 'next/image';
+import { Box, Card, Flex, Image, Text } from '@mantine/core'
+import NextImage from 'next/image'
 
-import Section from '@/app/_components/Section';
+import Section from '@/app/_components/Section'
 
-import image from './about-chris-hudson.jpg';
-import classes from './AboutSection.module.css';
+import image from './about-chris-hudson.jpg'
+import classes from './AboutSection.module.css'
 
 function AboutSection() {
   return (
@@ -19,7 +19,8 @@ function AboutSection() {
           <Text>
             For over a decade, I&apos;ve dedicated my career to creating spaces where young people
             and those working with them can thrive. My work is driven by a simple but powerful
-            belief:{' '}
+            belief:
+            {' '}
             <strong>
               every child, staff member, and family deserves access to high-quality youth
               programs—no matter who they are, where they come from, or how they identify.
@@ -29,18 +30,26 @@ function AboutSection() {
             Compassion and intentionality are at the heart of everything I do. As a social worker,
             youth development specialist, and a camp director with over 30 years of camp experience,
             I&apos;ve seen firsthand how proper training, leadership, and culture can transform a program
-            from good to life changing. I don&apos;t just teach theory—I bring{' '}
-            <strong>real world experience</strong> in guiding teams, shaping inclusive policies, and
+            from good to life changing. I don&apos;t just teach theory—I bring
+            {' '}
+            <strong>real world experience</strong>
+            {' '}
+            in guiding teams, shaping inclusive policies, and
             helping professionals grow into the leaders young people need.
           </Text>
           <Text>
-            Through my work at <strong>PlanetChris Consulting</strong>, I help summer camps,
+            Through my work at
+            {' '}
+            <strong>PlanetChris Consulting</strong>
+            , I help summer camps,
             afterschool programs, and youth-serving organizations create stronger, more inclusive
-            environments. My approach is hands-on, interactive, and rooted in the belief that{' '}
+            environments. My approach is hands-on, interactive, and rooted in the belief that
+            {' '}
             <strong>when we invest in people, we build communities where everyone belongs.</strong>
           </Text>
           <Text>
-            At the end of every training, I leave teams with the same message:{' '}
+            At the end of every training, I leave teams with the same message:
+            {' '}
             <Text c="pc-denim" component="em" fw={700}>
               Love must not be rare
             </Text>
@@ -58,7 +67,7 @@ function AboutSection() {
         </Box>
       </Card>
     </Section>
-  );
+  )
 }
 
-export default AboutSection;
+export default AboutSection

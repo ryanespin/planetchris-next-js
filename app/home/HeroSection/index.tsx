@@ -1,8 +1,8 @@
-import { Box, Button, Container, Flex, Highlight, Image, Text, Title } from '@mantine/core';
-import NextImage from 'next/image';
+import { Box, Button, Container, Flex, Highlight, Image, Text, Title } from '@mantine/core'
+import NextImage from 'next/image'
 
-import classes from './HeroSection.module.css';
-import image from './pc-hero-image.png';
+import classes from './HeroSection.module.css'
+import image from './pc-hero-image.png'
 
 function HeroSection() {
   return (
@@ -42,7 +42,7 @@ function HeroSection() {
         </Flex>
       </Container>
     </Box>
-  );
+  )
 }
 
-export default HeroSection;
+export default HeroSection

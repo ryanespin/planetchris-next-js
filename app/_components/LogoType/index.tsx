@@ -1,6 +1,6 @@
 interface LogoTypeProps extends React.ComponentPropsWithoutRef<'svg'> {
-  height?: number | string;
-  width?: number | string;
+  height?: number | string
+  width?: number | string
 }
 
 export function LogoType({ height, style, width, ...others }: LogoTypeProps) {
@@ -17,5 +17,5 @@ export function LogoType({ height, style, width, ...others }: LogoTypeProps) {
         fill="currentcolor"
       />
     </svg>
-  );
+  )
 }

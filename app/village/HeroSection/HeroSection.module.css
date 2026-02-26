@@ -1,0 +1,15 @@
+.content {
+  align-items: flex-start;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--mantine-spacing-lg);
+  margin-bottom: var(--mantine-spacing-xl);
+  position: relative;
+  z-index: 1;
+}
+
+.image-container {
+  bottom: 0;
+  position: absolute;
+  right: 0;
+}

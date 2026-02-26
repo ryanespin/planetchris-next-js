@@ -1,11 +1,11 @@
-import '@mantine/core/styles.css';
-import '@mantine/carousel/styles.css';
-import '@mantine/notifications/styles.css';
-import '@fontsource/dm-sans';
+import '@mantine/core/styles.css'
+import '@mantine/carousel/styles.css'
+import '@mantine/notifications/styles.css'
+import '@fontsource/dm-sans'
 
-import './_theme/styles.css';
+import './_theme/styles.css'
 
-import { config } from '@fortawesome/fontawesome-svg-core';
+import { config } from '@fortawesome/fontawesome-svg-core'
 import {
   AppShell,
   AppShellHeader,
@@ -13,18 +13,19 @@ import {
   ColorSchemeScript,
   mantineHtmlProps,
   MantineProvider,
-} from '@mantine/core';
-import { Notifications } from '@mantine/notifications';
-import { GoogleAnalytics } from '@next/third-parties/google';
-import { Metadata, Viewport } from 'next';
-import '@fortawesome/fontawesome-svg-core/styles.css';
-import React from 'react';
+} from '@mantine/core'
+import { Notifications } from '@mantine/notifications'
+import { GoogleAnalytics } from '@next/third-parties/google'
+import { Metadata, Viewport } from 'next'
+import '@fortawesome/fontawesome-svg-core/styles.css'
+import React from 'react'
 
-import Footer from './_components/Footer';
-import Header from './_components/Header';
-import { theme } from './_theme';
+import ContactSection from './_components/ContactSection'
+import Footer from './_components/Footer'
+import Header from './_components/Header'
+import { theme } from './_theme'
 
-config.autoAddCss = false;
+config.autoAddCss = false
 
 export const metadata: Metadata = {
   description:
@@ -61,12 +62,12 @@ export const metadata: Metadata = {
   robots: {
     follow: true,
     googleBot: {
-      follow: true,
-      index: true,
+      'follow': true,
+      'index': true,
       'max-image-preview': 'large',
       'max-snippet': -1,
       'max-video-preview': -1,
-      noimageindex: false,
+      'noimageindex': false,
     },
     index: true,
     nocache: false,
@@ -79,11 +80,11 @@ export const metadata: Metadata = {
     images: ['https:/planetchris.net/og-image.png'], // Must be an absolute URL
     title: 'PlanetChris Consulting',
   },
-};
+}
 
 export const viewport: Viewport = {
   themeColor: theme.primaryColor,
-};
+}
 
 export default function RootLayout({ children }: { children: any }) {
   return (
@@ -105,6 +106,7 @@ export default function RootLayout({ children }: { children: any }) {
             </AppShellHeader>
             <AppShellMain>
               {children}
+              <ContactSection />
               <Footer />
             </AppShellMain>
           </AppShell>
@@ -112,5 +114,5 @@ export default function RootLayout({ children }: { children: any }) {
         <GoogleAnalytics gaId="G-S7HT0L60MG" />
       </body>
     </html>
-  );
+  )
 }

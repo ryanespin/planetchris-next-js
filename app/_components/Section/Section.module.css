@@ -8,6 +8,10 @@
     background-color: var(--mantine-color-pc-denim-4);
     color: var(--mantine-color-white);
   }
+
+  &-denim-light {
+    background-color: var(--mantine-color-pc-denim-0);
+  }
 }
 
 .container {

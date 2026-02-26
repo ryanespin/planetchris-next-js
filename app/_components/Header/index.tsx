@@ -1,15 +1,16 @@
-'use client';
+'use client'
 
-import { Anchor, Burger, Button, Container, Drawer } from '@mantine/core';
-import { useDisclosure } from '@mantine/hooks';
+import { Anchor, Burger, Button, Container, Drawer } from '@mantine/core'
+import { useDisclosure } from '@mantine/hooks'
+import Link from 'next/link'
 
-import { Logo } from '../Logo';
-import { LogoType } from '../LogoType';
-import HeaderButtonGroup from './components/HeaderButtonGroup';
-import classes from './Header.module.css';
+import { Logo } from '../Logo'
+import { LogoType } from '../LogoType'
+import HeaderButtonGroup from './components/HeaderButtonGroup'
+import classes from './Header.module.css'
 
 function Header() {
-  const [opened, { close, open }] = useDisclosure(false);
+  const [opened, { close, open }] = useDisclosure(false)
 
   return (
     <Container className={classes.header} size="xl">
@@ -26,7 +27,7 @@ function Header() {
         style={{ borderRadius: 4, position: 'fixed', zIndex: 101 }}
         variant="filled"
       />
-      <Anchor className={classes.logo} href="#top">
+      <Anchor className={classes.logo} component={Link} href="home#top">
         <Logo className={classes['logo-image']} />
         <LogoType className={classes['logo-type']} />
       </Anchor>
@@ -39,12 +40,12 @@ function Header() {
         opened={opened}
         pos="relative"
         size="max-content"
-        title={
-          <Anchor className={classes.logo} href="#top">
+        title={(
+          <Anchor className={classes.logo} component={Link} href="home#top">
             <Logo height={80} style={{ color: 'var(--mantine-color-pc-denim-4)' }} />
             <LogoType height={50} />
           </Anchor>
-        }
+        )}
         withCloseButton={false}
       >
         <HeaderButtonGroup close={close}>
@@ -54,7 +55,7 @@ function Header() {
         </HeaderButtonGroup>
       </Drawer>
     </Container>
-  );
+  )
 }
 
-export default Header;
+export default Header

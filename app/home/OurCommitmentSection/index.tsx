@@ -1,11 +1,11 @@
-import { Box, Card, Flex, Image, Text } from '@mantine/core';
-import NextImage from 'next/image';
+import { Box, Card, Flex, Image, Text } from '@mantine/core'
+import NextImage from 'next/image'
 
-import { Logo } from '@/app/_components/Logo';
-import Section from '@/app/_components/Section';
+import { Logo } from '@/app/_components/Logo'
+import Section from '@/app/_components/Section'
 
-import classes from './OurCommitmentSection.module.css';
-import signature from './signature.png';
+import classes from './OurCommitmentSection.module.css'
+import signature from './signature.png'
 
 function OurCommitmentSection() {
   return (
@@ -48,7 +48,7 @@ function OurCommitmentSection() {
         </Box>
       </Card>
     </Section>
-  );
+  )
 }
 
-export default OurCommitmentSection;
+export default OurCommitmentSection

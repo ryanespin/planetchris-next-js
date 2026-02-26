@@ -1,4 +1,4 @@
-import { DefaultMantineColor, MantineColorsTuple } from '@mantine/core';
+import { DefaultMantineColor, MantineColorsTuple } from '@mantine/core'
 
 const pcDenim: MantineColorsTuple = [
   '#F3FAFC',
@@ -11,7 +11,7 @@ const pcDenim: MantineColorsTuple = [
   '#1C51C4',
   '#1A3F93',
   '#163371',
-];
+]
 
 const pcOrange: MantineColorsTuple = [
   '#FAF9F0',
@@ -24,17 +24,31 @@ const pcOrange: MantineColorsTuple = [
   '#8D570A',
   '#6C420F',
   '#543511',
-];
+]
+
+const pcShamrock: MantineColorsTuple = [
+  '#F3F9F8',
+  '#E6F7F1',
+  '#C8EFDE',
+  '#9BE2C6',
+  '#50CC9F',
+  '#23AF74',
+  '#1B8F56',
+  '#207249',
+  '#1F573E',
+  '#1B4635',
+]
 
 export const colors = {
   'pc-denim': pcDenim,
   'pc-orange': pcOrange,
-};
+  'pc-shamrock': pcShamrock,
+}
 
-type ExtendedCustomColors = 'pc-denim' | 'pc-orange' | DefaultMantineColor;
+type ExtendedCustomColors = 'pc-denim' | 'pc-orange' | 'pc-shamrock' | DefaultMantineColor
 
 declare module '@mantine/core' {
   export interface MantineThemeColorsOverride {
-    colors: Record<ExtendedCustomColors, MantineColorsTuple>;
+    colors: Record<ExtendedCustomColors, MantineColorsTuple>
   }
 }

@@ -8,19 +8,20 @@ import {
   ImageProps,
   Title,
   TitleProps,
-} from '@mantine/core';
-import NextImage, { ImageProps as NextImageProps } from 'next/image';
+} from '@mantine/core'
+import NextImage, { ImageProps as NextImageProps } from 'next/image'
 
-import classes from './Section.module.css';
+import classes from './Section.module.css'
 
 interface SectionProps extends BoxProps {
-  anchorId?: string;
-  badgeText?: string;
-  children?: React.ReactNode;
-  image?: ImageProps & NextImageProps;
-  sectionTitle?: TitleProps['children'];
-  sectionTitleProps?: TitleProps;
-  sectionVariant?: 'default' | 'denim' | 'image-background';
+  anchorId?: string
+  badgeText?: string
+  children?: React.ReactNode
+  hideDivider?: boolean
+  image?: ImageProps & NextImageProps
+  sectionTitle?: TitleProps['children']
+  sectionTitleProps?: TitleProps
+  sectionVariant?: 'default' | 'denim' | 'denim-light' | 'image-background'
 }
 
 function Section(props: SectionProps) {
@@ -28,12 +29,14 @@ function Section(props: SectionProps) {
     anchorId,
     badgeText,
     children,
+    hideDivider = false,
     image,
     sectionTitle,
     sectionTitleProps,
     sectionVariant = 'default',
     ...otherProps
-  } = props;
+  } = props
+
   return (
     <Box className={classes['bg-container']}>
       <div className={classes.anchor} id={anchorId} />
@@ -48,7 +51,7 @@ function Section(props: SectionProps) {
       >
         <Container className={classes.container}>
           {badgeText && (
-            <Badge color="pc-denim" variant={sectionVariant === 'default' ? 'filled' : 'white'}>
+            <Badge color="pc-denim" variant={sectionVariant === 'denim' ? 'white' : 'filled'}>
               {badgeText}
             </Badge>
           )}
@@ -56,17 +59,17 @@ function Section(props: SectionProps) {
             {sectionTitle}
           </Title>
           {children}
-          {sectionVariant !== 'image-background' && (
+          {!hideDivider && (
             <Divider
               className={classes.divider}
-              color={sectionVariant === 'default' ? 'denim' : 'white'}
+              color={sectionVariant === 'denim' ? 'white' : 'denim'}
               size="sm"
             />
           )}
         </Container>
       </Box>
     </Box>
-  );
+  )
 }
 
-export default Section;
+export default Section

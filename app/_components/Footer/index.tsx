@@ -1,8 +1,8 @@
-import { Anchor, Box, Button, Container, Divider, Flex, Text } from '@mantine/core';
+import { Anchor, Box, Button, Container, Divider, Flex, Text } from '@mantine/core'
 
-import { Logo } from '../Logo';
-import { LogoType } from '../LogoType';
-import classes from './Footer.module.css';
+import { Logo } from '../Logo'
+import { LogoType } from '../LogoType'
+import classes from './Footer.module.css'
 
 function Footer() {
   return (
@@ -38,7 +38,8 @@ function Footer() {
         <Flex className={classes['bottom-footer']}>
           <Text flex={1}>@ 2025 PlanetChris Consulting. All rights reserved.</Text>
           <Text>
-            Site designed by{' '}
+            Site designed by
+            {' '}
             <Anchor href="https://ryanesp.in" target="_blank">
               Ryan Espin
             </Anchor>
@@ -46,7 +47,7 @@ function Footer() {
         </Flex>
       </Container>
     </Box>
-  );
+  )
 }
 
-export default Footer;
+export default Footer
