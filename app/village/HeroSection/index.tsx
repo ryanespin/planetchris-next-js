@@ -9,7 +9,7 @@ import image from './village.png'
 export default function HeroSection() {
   return (
     <Section hideDivider sectionVariant="denim">
-      <Flex my="xl">
+      <Flex className={classes.container}>
         <Flex className={classes.content}>
           <Title bg={alpha('var(--mantine-color-pc-denim-4)', 0.74)}>The Village</Title>
           <Text bg={alpha('var(--mantine-color-pc-denim-4)', 0.74)} size="lg">For Parents Who Want to Stay Steady in a Changing World</Text>
@@ -18,7 +18,7 @@ export default function HeroSection() {
         </Flex>
         <Flex flex={1}>
           <Box className={classes['image-container']}>
-            <Image alt="Snowy village illustration" component={NextImage} src={image} />
+            <Image alt="Snowy village illustration" className={classes.image} component={NextImage} src={image} />
           </Box>
         </Flex>
       </Flex>

@@ -13,7 +13,7 @@ export interface CircleItemProps {
 
 export default function CircleItem({ icon, subtitle, text, title }: CircleItemProps) {
   return (
-    <Flex align="flex-start" gap="lg">
+    <Flex className={classes.container}>
       <Center className={classes['icon-circle']}>
         <FontAwesomeIcon className={classes.icon} icon={icon} />
       </Center>

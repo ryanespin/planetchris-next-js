@@ -2,6 +2,7 @@ import { Button, Flex, Text, Title } from '@mantine/core'
 
 import Section from '@/app/_components/Section'
 
+import classes from './DetailsSection.module.css'
 import PricingCard, { PricingCardProps } from './PricingCard'
 
 const items: PricingCardProps[] = [
@@ -31,7 +32,7 @@ export default function DetailsSection() {
           Live on Zoom
         </Text>
       </Flex>
-      <Flex gap="lg">
+      <Flex className={classes.container}>
         {items.map(i => <PricingCard flex={1} key={i.price?.toString()} {...i} />)}
       </Flex>
       <Button component="a" href="https://forms.gle/5z1nWSVoesCusoTv8" size="xl">Register Today</Button>
