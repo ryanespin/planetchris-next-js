@@ -9,14 +9,14 @@ const items: PricingCardProps[] = [
   {
     price: 450,
     subtitle: 'per adult participant',
-    title: '(5) 90 min virtual session',
+    title: '(5) 90 min virtual sessions',
   },
   {
     badge: 'Best Value',
     discountedPrice: 650,
     price: 900,
     subtitle: 'for two adults registering together from the same family system',
-    title: '(5) 90 min virtual session x2',
+    title: '(5) 90 min virtual sessions x2',
   },
 ]
 
