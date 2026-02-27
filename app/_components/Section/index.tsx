@@ -21,7 +21,7 @@ interface SectionProps extends BoxProps {
   image?: ImageProps & NextImageProps
   sectionTitle?: TitleProps['children']
   sectionTitleProps?: TitleProps
-  sectionVariant?: 'default' | 'denim' | 'denim-light' | 'image-background'
+  sectionVariant?: 'default' | 'denim' | 'denim-light' | 'image-background' | 'orange-light' | 'village'
 }
 
 function Section(props: SectionProps) {
@@ -39,7 +39,7 @@ function Section(props: SectionProps) {
 
   return (
     <Box className={classes['bg-container']}>
-      <div className={classes.anchor} id={anchorId} />
+      {anchorId && <div className={classes.anchor} id={anchorId} />}
       {image && <Image className={classes.image} component={NextImage} {...image} />}
       <Box
         className={`
@@ -55,9 +55,11 @@ function Section(props: SectionProps) {
               {badgeText}
             </Badge>
           )}
-          <Title className={classes.title} order={2} {...sectionTitleProps}>
-            {sectionTitle}
-          </Title>
+          {sectionTitle && (
+            <Title className={classes.title} order={2} {...sectionTitleProps}>
+              {sectionTitle}
+            </Title>
+          )}
           {children}
           {!hideDivider && (
             <Divider

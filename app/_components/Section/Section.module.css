@@ -12,6 +12,18 @@
   &-denim-light {
     background-color: var(--mantine-color-pc-denim-0);
   }
+
+  &-orange-light {
+    background-color: var(--mantine-color-pc-orange-2);
+  }
+
+  &-village {
+    background-color: var(--mantine-color-pc-orange-2);
+    background-image: url(/village.png);
+    background-size: contain;
+    background-position: bottom right;
+    background-repeat: no-repeat;
+  }
 }
 
 .container {

@@ -1,0 +1,19 @@
+.button {
+  border-radius: var(--mantine-radius-xl);
+}
+
+.container {
+  padding-bottom: rem(100);
+  width: 100%;
+
+  @media (min-width: $mantine-breakpoint-sm) {
+    padding: 0;
+  }
+}
+
+.text {
+  background-color: color-mix(in srgb, var(--mantine-color-pc-orange-2) 74%, transparent);
+  font-style: italic;
+  margin-bottom: var(--mantine-spacing-sm);
+  max-width: max-content;
+}
