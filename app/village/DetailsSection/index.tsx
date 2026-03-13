@@ -27,7 +27,6 @@ export default function DetailsSection() {
         <Text size="lg">
           Tuesdays 7:00–8:30 PM ET
         </Text>
-        <Title order={3}>March 24, March 31, April 7, April 14, April 21</Title>
         <Text size="lg">
           Live on Zoom
         </Text>
@@ -36,7 +35,7 @@ export default function DetailsSection() {
         {items.map(i => <PricingCard flex={1} key={i.price?.toString()} {...i} />)}
       </Flex>
       <Button component="a" href="https://forms.gle/5z1nWSVoesCusoTv8" size="xl">Register Today</Button>
-      <Text maw="60ch">Enrollment closes March 17. The series will proceed with a minimum of 6 participants. Limited to 10 participants. If cost is a barrier, please reach out directly.</Text>
+      <Text maw="60ch">Limited to 10 participants per cohort.</Text>
     </Section>
   )
 }
