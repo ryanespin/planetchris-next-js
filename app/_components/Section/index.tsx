@@ -51,7 +51,10 @@ function Section(props: SectionProps) {
       >
         <Container className={classes.container}>
           {badgeText && (
-            <Badge color="pc-denim" variant={sectionVariant === 'denim' ? 'white' : 'filled'}>
+            <Badge
+              color={sectionVariant === 'denim' ? 'pc-denim' : 'pc-denim.4'}
+              variant={sectionVariant === 'denim' ? 'white' : 'filled'}
+            >
               {badgeText}
             </Badge>
           )}
@@ -64,7 +67,7 @@ function Section(props: SectionProps) {
           {!hideDivider && (
             <Divider
               className={classes.divider}
-              color={sectionVariant === 'denim' ? 'white' : 'denim'}
+              color={sectionVariant === 'denim' ? 'pc-denim.9' : 'denim'}
               size="sm"
             />
           )}

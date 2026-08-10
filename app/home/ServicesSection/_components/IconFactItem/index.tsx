@@ -18,7 +18,7 @@ function IconFactItem(props: IconFactItemProps) {
         <FontAwesomeIcon className={classes.icon} icon={icon} />
       </Flex>
       <Box className={classes.copy}>
-        <Title className={classes.title} order={5}>
+        <Title className={classes.title} order={4}>
           {factTitle}
         </Title>
         <Text className={classes.text} {...otherProps}>

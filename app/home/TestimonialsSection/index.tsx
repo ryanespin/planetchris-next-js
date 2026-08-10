@@ -1,7 +1,10 @@
+'use client'
+
 import { faQuoteLeft } from '@fortawesome/duotone-light-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Carousel, CarouselSlide } from '@mantine/carousel'
 import { Badge, Box, Card, CardSection, Text, Title } from '@mantine/core'
+import { useMediaQuery } from '@mantine/hooks'
 
 import Section from '@/app/_components/Section'
 
@@ -27,6 +30,8 @@ function TestimonialItem({ children }: { children?: React.ReactNode }) {
 }
 
 function TestimonialsSection() {
+  const isMobile = useMediaQuery('(max-width: 48em)', false)
+
   return (
     <Section
       anchorId="testimonials"
@@ -43,29 +48,33 @@ function TestimonialsSection() {
       sectionVariant="image-background"
     >
       <Card className={classes.card}>
-        <Badge>Testimonials</Badge>
+        <Badge color="pc-denim.4">Testimonials</Badge>
         <Title order={2}>What people have to say</Title>
-        <CardSection maw="100%">
-          <Carousel
-            emblaOptions={{ align: 'center', loop: true }}
-            height={450}
-            hiddenFrom="sm"
-            slideGap="xs"
-            slideSize="90%"
-            withIndicators
-          >
-            {testimonials.map((item, index) => (
-              <CarouselSlide key={index}>
-                <TestimonialItem>{item}</TestimonialItem>
-              </CarouselSlide>
-            ))}
-          </Carousel>
-        </CardSection>
-        <Box visibleFrom="sm">
-          {testimonials.map((item, index) => (
-            <TestimonialItem key={index}>{item}</TestimonialItem>
-          ))}
-        </Box>
+        {isMobile
+          ? (
+              <CardSection maw="100%">
+                <Carousel
+                  emblaOptions={{ align: 'center', loop: true }}
+                  height={450}
+                  slideGap="xs"
+                  slideSize="90%"
+                  withIndicators
+                >
+                  {testimonials.map((item, index) => (
+                    <CarouselSlide key={index}>
+                      <TestimonialItem>{item}</TestimonialItem>
+                    </CarouselSlide>
+                  ))}
+                </Carousel>
+              </CardSection>
+            )
+          : (
+              <Box>
+                {testimonials.map((item, index) => (
+                  <TestimonialItem key={index}>{item}</TestimonialItem>
+                ))}
+              </Box>
+            )}
       </Card>
     </Section>
   )

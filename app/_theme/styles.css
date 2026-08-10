@@ -1,3 +1,7 @@
 html {
   scroll-behavior: smooth;
 }
+
+:root {
+  --mantine-color-dimmed: var(--mantine-color-gray-7);
+}

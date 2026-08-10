@@ -109,7 +109,7 @@ function ServicesSection() {
             based on your team&apos;s unique challenges
             and goals. Let&apos;s discuss what your team needs!
           </Text>
-          <Button radius="xl" variant="outline">
+          <Button component="a" href="#contact" radius="xl" variant="outline">
             Get in Touch
           </Button>
         </Alert>

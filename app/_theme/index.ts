@@ -4,9 +4,10 @@ import { colors } from './colors'
 import { components } from './components'
 
 export const theme: MantineThemeOverride = createTheme({
+  autoContrast: true,
   colors,
   components,
   fontFamily: '\'Dm Sans\', sans-serif',
   primaryColor: 'pc-denim',
-  primaryShade: 5,
+  primaryShade: 6,
 })

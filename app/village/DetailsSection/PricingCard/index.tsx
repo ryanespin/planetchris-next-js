@@ -11,14 +11,14 @@ export interface PricingCardProps extends BoxProps {
 export default function PricingCard({ badge, discountedPrice, price, subtitle, title, ...other }: PricingCardProps) {
   return (
     <Box bg="pc-denim.0" pos="relative" px="xl" py="md" style={{ borderRadius: 'var(--mantine-radius-lg)' }} {...other}>
-      {badge && <Badge color="pc-shamrock" pos="absolute" right={-8} top={-8}>{badge}</Badge>}
+      {badge && <Badge color="pc-shamrock.4" pos="absolute" right={-8} top={-8}>{badge}</Badge>}
       <Title component="p" mb="md" order={3}>{title}</Title>
       <Flex gap="xs">
         <Title component="p" order={1} td={discountedPrice ? 'line-through' : 'none'}>
           {price?.toLocaleString('en', { currency: 'USD', style: 'currency', trailingZeroDisplay: 'stripIfInteger' })}
         </Title>
         {discountedPrice && (
-          <Title c="pc-shamrock" component="p" order={1}>
+          <Title c="pc-shamrock.7" component="p" order={1}>
             {discountedPrice?.toLocaleString('en', { currency: 'USD', style: 'currency', trailingZeroDisplay: 'stripIfInteger' })}
           </Title>
         )}

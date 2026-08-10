@@ -28,7 +28,10 @@
 
 .image-container {
   position: relative;
-  max-height: 523px;
+
+  @media (min-width: $mantine-breakpoint-sm) {
+    max-height: 523px;
+  }
 
   @media (max-width: $mantine-breakpoint-sm) {
     aspect-ratio: .9;
@@ -40,6 +43,8 @@
   bottom: 0;
   right: 0;
   width: 101%;
+  height: auto;
+  max-height: calc(100% + 48px);
   object-fit: contain;
   object-position: bottom right;
 }

@@ -1,4 +1,4 @@
-import { Button, Flex, Text, Title } from '@mantine/core'
+import { Button, Flex, Text } from '@mantine/core'
 
 import Section from '@/app/_components/Section'
 
@@ -34,7 +34,7 @@ export default function DetailsSection() {
       <Flex className={classes.container}>
         {items.map(i => <PricingCard flex={1} key={i.price?.toString()} {...i} />)}
       </Flex>
-      <Button component="a" href="https://forms.gle/5z1nWSVoesCusoTv8" size="xl">Register Today</Button>
+      <Button color="pc-denim.4" component="a" href="https://forms.gle/5z1nWSVoesCusoTv8" size="xl">Register Today</Button>
       <Text maw="60ch">Limited to 10 participants per cohort.</Text>
     </Section>
   )

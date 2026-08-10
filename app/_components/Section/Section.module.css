@@ -6,7 +6,7 @@
 
   &-denim {
     background-color: var(--mantine-color-pc-denim-4);
-    color: var(--mantine-color-white);
+    color: var(--mantine-color-pc-denim-9);
   }
 
   &-denim-light {
