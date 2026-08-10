@@ -1,6 +1,5 @@
 'use client'
 
-import emailjs from '@emailjs/browser'
 import { faPaperPlane, faSmile } from '@fortawesome/duotone-light-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Alert, Button, Card, Flex, Textarea, TextInput } from '@mantine/core'
@@ -29,27 +28,32 @@ function ContactSection() {
     },
   })
 
-  const onSubmit = (values: { email: string, message: string, name: string }) => {
+  const onSubmit = async (values: { email: string, message: string, name: string }) => {
     setIsSending(true)
-    emailjs
-      .send('service_tf8sn9l', 'template_bragcbu', values, {
-        publicKey: 'ygrizlPbKT8aBlFdr',
+    try {
+      const response = await fetch('/api/contact', {
+        body: JSON.stringify(values),
+        headers: { 'Content-Type': 'application/json' },
+        method: 'POST',
       })
-      .then(
-        () => {
-          setIsSending(false)
-          setMessageSentSuccesfully(true)
-        },
-        (_error) => {
-          setIsSending(false)
-          console.error(_error)
-          notifications.show({
-            color: 'red',
-            message: `Please try again.`,
-            title: 'Sorry, an error has occurred.',
-          })
-        },
-      )
+
+      if (!response.ok) {
+        throw new Error('Request failed')
+      }
+
+      setMessageSentSuccesfully(true)
+    }
+    catch (_error) {
+      console.error(_error)
+      notifications.show({
+        color: 'red',
+        message: `Please try again.`,
+        title: 'Sorry, an error has occurred.',
+      })
+    }
+    finally {
+      setIsSending(false)
+    }
   }
 
   const onSendAnother = () => {

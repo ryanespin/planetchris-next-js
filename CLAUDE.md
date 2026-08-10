@@ -37,7 +37,7 @@ To run a single test file: `npx jest path/to/Component/index.test.tsx`. To filte
 
 **Styling**: CSS Modules (`*.module.css`) colocated with each component, processed via `postcss-preset-mantine` + `postcss-simple-vars` (see `postcss.config.cjs`). Prefer Mantine theme tokens/CSS vars (e.g. `var(--mantine-color-pc-denim-4)`) over hardcoded values.
 
-**Forms**: the contact form (`app/_components/ContactSection`) uses `@mantine/form` for validation and submits via EmailJS (`@emailjs/browser`) directly from the client — no backend API route.
+**Forms**: the contact form (`app/_components/ContactSection`) uses `@mantine/form` for client-side validation and `fetch`es `app/api/contact/route.ts`, a Next.js Route Handler that sends the email server-side via [Resend](https://resend.com). Requires `RESEND_API_KEY` in the environment (see `.env.example`) — without it, submissions fail. Currently sends from Resend's shared `onboarding@resend.dev` test domain with `replyTo` set to the visitor's email; switch to a verified `@planetchris.net` sender once that domain is verified with Resend.
 
 **Icons**: FontAwesome Pro (duotone-light set) via `@awesome.me`/`@fortawesome` packages pulled from a private registry configured in `.npmrc`.
 
@@ -53,7 +53,7 @@ To run a single test file: `npx jest path/to/Component/index.test.tsx`. To filte
 
 Jest + React Testing Library, set up via `next/jest` (`jest.config.ts`) per the [Next.js Jest guide](https://nextjs.org/docs/app/guides/testing/jest). Tests are colocated with the component they cover, following the same `ComponentName/` folder convention as styles (e.g. `app/_components/Section/index.test.tsx`), rather than a top-level `__tests__` directory.
 
-- **Always import test utilities from `@/app/_test-utils`**, not directly from `@testing-library/react`. It re-exports everything from RTL plus a custom `render` that wraps components in `MantineProvider` with this project's theme (per [Mantine's Jest guide](https://mantine.dev/guides/jest/)) — Mantine components will throw without a provider in the tree. It also re-exports `userEvent`.
+- **Always import test utilities from `@/app/_test-utils`**, not directly from `@testing-library/react`. It re-exports everything from RTL plus a custom `render` that wraps components in `MantineProvider` (with this project's theme) and `<Notifications />`, mirroring the real `app/layout.tsx` tree (per [Mantine's Jest guide](https://mantine.dev/guides/jest/)) — Mantine components will throw without a provider in the tree, and `notifications.show()` calls render nothing without `<Notifications />` mounted. It also re-exports `userEvent`.
 - `jest.setup.ts` mocks `window.matchMedia` and `ResizeObserver`, which Mantine's components rely on internally; it's registered via `setupFilesAfterEnv`.
 - CSS Modules are auto-mocked by `next/jest` as an identity proxy — `classes.divider` resolves to the string `'divider'` in tests, so DOM queries like `container.querySelector('.divider')` work directly against class names from the source `*.module.css`.
 - The `@/*` path alias is mapped in `jest.config.ts` via `moduleNameMapper` to match `tsconfig.json`.
