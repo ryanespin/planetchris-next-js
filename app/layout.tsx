@@ -93,7 +93,7 @@ export default function RootLayout({ children }: { children: any }) {
         <ColorSchemeScript />
         <link href="/favicon.svg" rel="shortcut icon" />
         <meta
-          content="minimum-scale=1, initial-scale=1, width=device-width, user-scalable=no"
+          content="minimum-scale=1, initial-scale=1, width=device-width"
           name="viewport"
         />
       </head>

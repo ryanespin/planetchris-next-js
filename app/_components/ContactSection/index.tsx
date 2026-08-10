@@ -14,6 +14,7 @@ import classes from './ContactSection.module.css'
 
 function ContactSection() {
   const [messageSentSuccessfully, setMessageSentSuccesfully] = useState(false)
+  const [isSending, setIsSending] = useState(false)
   const form = useForm({
     initialValues: {
       email: '',
@@ -29,15 +30,18 @@ function ContactSection() {
   })
 
   const onSubmit = (values: { email: string, message: string, name: string }) => {
+    setIsSending(true)
     emailjs
       .send('service_tf8sn9l', 'template_bragcbu', values, {
         publicKey: 'ygrizlPbKT8aBlFdr',
       })
       .then(
         () => {
+          setIsSending(false)
           setMessageSentSuccesfully(true)
         },
         (_error) => {
+          setIsSending(false)
           console.error(_error)
           notifications.show({
             color: 'red',
@@ -46,6 +50,11 @@ function ContactSection() {
           })
         },
       )
+  }
+
+  const onSendAnother = () => {
+    form.reset()
+    setMessageSentSuccesfully(false)
   }
 
   return (
@@ -64,6 +73,9 @@ function ContactSection() {
               variant="filled"
             >
               Thanks for reaching out to PlanetChris Consulting. We have received your email.
+              <Button color="pc-orange" mt="md" onClick={onSendAnother} variant="white">
+                Send Another Message
+              </Button>
             </Alert>
           )
         : (
@@ -73,17 +85,18 @@ function ContactSection() {
               noValidate
               onSubmit={form.onSubmit(values => onSubmit(values))}
             >
-              <TextInput key={form.key('name')} label="Name" {...form.getInputProps('name')} />
-              <TextInput key={form.key('email')} label="Email" {...form.getInputProps('email')} />
-              <Textarea key={form.key('message')} label="Message" {...form.getInputProps('message')} />
+              <TextInput key={form.key('name')} label="Name" withAsterisk {...form.getInputProps('name')} />
+              <TextInput key={form.key('email')} label="Email" withAsterisk {...form.getInputProps('email')} />
+              <Textarea key={form.key('message')} label="Message" withAsterisk {...form.getInputProps('message')} />
               <Flex align={{ base: 'center', sm: 'flex-end' }} direction={{ base: 'column', sm: 'row' }} gap="md" justify={{ base: 'center', sm: 'space-between' }}>
-                <Button className={classes.button} size="xl" type="submit">
+                <Button className={classes.button} color="pc-denim.4" loading={isSending} size="xl" type="submit">
                   Send Message
                 </Button>
                 <Button
                   component="a"
                   href="mailto:planetchris@gmail.com?subject=[planetchris.net] I'd Like to Learn More About PlanetChris Consulting"
                   rightSection={<FontAwesomeIcon icon={faPaperPlane} />}
+                  size="lg"
                   target="_blank"
                   variant="outline"
                 >

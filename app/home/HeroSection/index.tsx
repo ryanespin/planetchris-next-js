@@ -38,7 +38,7 @@ function HeroSection() {
           </Button>
         </Flex>
         <Flex bg="var(--mantine-color-pc-denim-4)" className={classes['image-container']} flex={1}>
-          <Image alt="Chris Hudson" className={classes.image} component={NextImage} src={image} />
+          <Image alt="Chris Hudson" className={classes.image} component={NextImage} priority src={image} />
         </Flex>
       </Container>
     </Box>

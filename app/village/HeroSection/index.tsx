@@ -18,7 +18,7 @@ export default function HeroSection() {
         </Flex>
         <Flex flex={1}>
           <Box className={classes['image-container']}>
-            <Image alt="Snowy village illustration" className={classes.image} component={NextImage} src={image} />
+            <Image alt="Snowy village illustration" className={classes.image} component={NextImage} priority src={image} />
           </Box>
         </Flex>
       </Flex>

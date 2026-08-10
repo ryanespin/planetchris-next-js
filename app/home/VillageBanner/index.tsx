@@ -14,7 +14,7 @@ export default function VillageBanner() {
         <Text className={classes.text} size="lg">
           For Parents Who Want to Stay Steady in a Changing World
         </Text>
-        <Button className={classes.button} color="pc-denim.4" component={Link} href="/village">Register Today for The Village</Button>
+        <Button className={classes.button} color="pc-denim.4" component={Link} href="/village" size="lg">Register Today for The Village</Button>
       </Box>
     </Section>
   )
