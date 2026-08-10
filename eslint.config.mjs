@@ -1,5 +1,6 @@
 import stylistic from '@stylistic/eslint-plugin'
 import mantine from 'eslint-config-mantine';
+import jest from 'eslint-plugin-jest'
 import perfectionist from 'eslint-plugin-perfectionist'
 import { defineConfig } from 'eslint/config';
 
@@ -19,5 +20,9 @@ export default defineConfig(
               "warn"
           ]
       }]
-  }}
+  }},
+  {
+    files: ['**/*.test.{ts,tsx}'],
+    ...jest.configs['flat/recommended'],
+  }
 );
